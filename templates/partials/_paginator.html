@@ -1,0 +1,27 @@
+<div class="paginator-container">
+  <ul class="paginator">
+    {% if products.has_previous %}
+    <li><a href="?page=1" class="btn">&laquo; First</a></li>
+    <li><a href="?page={{ products.previous_page_number }}" class="btn">&lsaquo; Prev</a></li>
+    {% else %}
+    <li><span class="btn disabled">&laquo; First</span></li>
+    <li><span class="btn disabled">&lsaquo; Prev</span></li>
+    {% endif %}
+
+    {% for page in products.paginator.page_range %}
+      {% if page == products.number %}
+      <li><span class="btn active">{{ page }}</span></li>
+      {% elif page > products.number|add:'-5' and page < products.number|add:'5' %}
+      <li><a href="?page={{ page }}" class="btn">{{ page }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if products.has_next %}
+    <li><a href="?page={{ products.next_page_number }}" class="btn">Next &rsaquo;</a></li>
+    <li><a href="?page={{ products.paginator.num_pages }}" class="btn">Last &raquo;</a></li>
+    {% else %}
+    <li><span class="btn disabled">Next &rsaquo;</span></li>
+    <li><span class="btn disabled">Last &raquo;</span></li>
+    {% endif %}
+  </ul>
+</div>

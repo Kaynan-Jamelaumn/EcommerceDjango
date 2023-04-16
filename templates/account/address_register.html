@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register Address
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form method="POST" action="{% url 'account:address-register' %}">
+    {% csrf_token %}
+    <div class="w90 radius-10 bg-black auto border-xl border-white white font-xl weight-500">
+      <div class="auto w85">
+        <div class="mt-15">
+          <label for="address">Address</label>
+          <input class="input radius-3 bg-purple-pale white" type="text" id="address" placeholder="Address"
+            name="address" autocomplete="off">
+        </div>
+      </div>
+      <div class="auto w85">
+        <div class="mt-15">
+          <label for="number">Number</label>
+          <input class="input radius-3 bg-purple-pale white" type="text" id="number" placeholder="Number" name="number"
+            autocomplete="off">
+        </div>
+      </div>
+      <div class="auto w85">
+        <div class="mt-15">
+          <label for="postcode">PostCode</label>
+          <input class="input radius-3 bg-purple-pale white" type="text" id="postcode" placeholder="PostCode"
+            name="postcode" autocomplete="off">
+        </div>
+      </div>
+      <div class="auto w85">
+        <div class="mt-15">
+          <label for="select-state">State</label>
+          <select class="select radius-3 bg-purple-pale white" name="state" id="select-state">
+            <option class="white" selected disabled>select</option>
+            {% for state in states%}
+
+            <option value="{{state}}">{{state}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="auto w85">
+        <div class="mt-15">
+          <label for="city">Cities</label>
+          <select class="select radius-3 bg-purple-pale white" name="city" id="city">
+            <option class="white" selected disabled>select</option>
+            {% for city in cities%}
+            <option value="{{city}}">{{city}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="button-box text-center my-20">
+        <button class="button-l w85 auto radius-7 bg-purple-pale bg-purple-active white white-pale-active font-xxl"
+          type="submit"> Submit</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script type="module" src="{% static 'js/address/cepFilter.js'%}"> </script>
+{% endblock %}

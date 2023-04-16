@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<div class="container">
+  <form action="{% url 'account:register' %}" method="POST">
+    {% csrf_token %}
+    <div class="w90 auto radius-10 border-xl border-white bg-black white-vibrant font-xl">
+      {% if message %}
+      <div class="bg-orange-strong py-15 text-center">
+        <h3 class="black font-xxl">{{message}}</h3>
+      </div>
+      {% endif %}
+      <div class="w80 auto">
+        <div class="my-15">
+          <label class="weight-500 " for="name">Username</label>
+          <input class="input radius-3 bg-purple-pale white" type="text" id="name" placeholder="Username" name="name">
+        </div>
+
+        <div class="my-15">
+          <label class="weight-500" for="email">E-mail</label>
+          <input class="input radius-3 bg-purple-pale white" type="text" id="email" placeholder="E-mail" name="email">
+        </div>
+
+        <div class="field my-15">
+          <label class="weight-500" for="password">Password</label>
+          <input class="input radius-3 bg-purple-pale white" class="is-valid" type="password" id="password"
+            placeholder="Password" name="password">
+        </div>
+        <div class="field my-15">
+          <label class="weight-500" for="password-confirmation">Conirm Password</label>
+          <input class="input radius-3 bg-purple-pale white" type="password" id="password-confirmation"
+            placeholder="Confirm Password" name="password-confirmation">
+        </div>
+        <div class="button-box">
+          <button class="button-l w100 radius-7 bg-green-rich bg-green-pale-active white font-xxl" type="submit"> Register</button>
+        </div>
+
+        <div class="w100 my-15 text-center">
+          <h3 class="font-m white">Already possess an account?</h3>
+          <a class="font-xl orange relative underline-s-orange" href="{% url 'account:login' %}">Sign In</a>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="{% static 'js/validator/register.js' %}"></script>
+{% endblock%}

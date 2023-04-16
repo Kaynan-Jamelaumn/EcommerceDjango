@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Adresses
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="button-box w80 auto">
+    <a class="radius-5 button-xl w100 font-xxl bg-black bg-black-1-active white button-register bg-black-week-active"
+      href="{% url 'account:address-register' %}">Register Address</a>
+  </div>
+  <div class="mx-30">
+    <div class="w100 card-l">
+      {% for address_object in addresses %}
+      <div class="cflex space-between w100 p-15 bg-black border-l border-white mt-20 radius-5">
+        <div class="white font-m">
+          <p class="my-10">State: {{address_object.state}}</p>
+          <p class="my-10">City: {{address_object.city}}</p>
+          <p class="my-10">Postcode: {{address_object.post_code}}</p>
+          <p class="my-10">Address: {{address_object.address}}</p>
+          <p class="my-10">Number: {{address_object.number}}</p>
+        </div>
+        <div class="button-group">
+          <a class="text-center button-m w45 bg-red bg-purple-pale-active white white-pale-active font-xl radius-5"
+            href="{% url 'account:address_delete' address_object.id %}">Delete</a>
+          <a class="text-center button-m w45 bg-green-pale bg-purple-pale-active white white-pale-active font-xl radius-5"
+            href="{% url 'account:address-edit' address_object.id %}">Edit</a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

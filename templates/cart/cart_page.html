@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    {% if total %}
+        <div class="auto text-center">
+          <a class="button-pay radius-10 py-5 text-center button w80 font-mega bg-green-rich bg-green-pale-active white white-pale-active" href="{% url 'order:pay' %}">Pay</a>
+        </div>
+            <h2 class="mt-20 text-center green-rich font-mega">Your total: {{total}}</h2>
+    {% else %}
+            <h2 class="my-5 text-center black font-mega">No itens in cart</h2>
+    {% endif %}
+  <div class="mx-30">
+  <div class="w100 card-l">
+    {% for key, value in cart.items %}
+      <div class="w100 border-l border-white my-25 radius-5 bg-black">
+        <div class="font-l white px-20 py-15">
+          <a class="font-xl green relative underline-m-green" href="{% url 'product:detail' value.url %}">Go to Product</a>
+          <p class="my-10"">Name: {{ value.name }}</p>
+          <p class="my-10"">Quantity: {{ value.quantity }}</p>
+          <p class=my-10">Price: {{ value.price_or_promotion_price }}</p>
+          <p class="my-10">Total Price: {{ value.totalitem }}</p>
+          <div class="text-center">
+            <a class="button w100 white white-pale-active bg-red bg-red-pale-active font-xxl radius-7 py-10 " href="{% url 'cart:remove' key %}">Remove</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+  {% comment %}
+  some genious stupid code
+    {% for index_of in integerid %}
+              {% for field in other_fields %}   
+            <div class="card-items">
+                    {% if forloop.counter == forloop.parentloop.counter %}
+                            <p>Quantity: {{field.quantity}}</p>
+                            <p>Price: {{field.price_or_promotion_price}}</p>
+                            <p>Total: {{field.totalitem}}</p>
+                     {% endif %}
+              {% endfor%}
+              {% for  integerid in integerid %}
+                  {% if forloop.counter == forloop.parentloop.counter %}
+                      <p>ID: {{integerid}}</p>
+                      {% for variation in variations %}
+                            {% if integerid == variation.id %} 
+                               <p>Detail Item: <a href="{% url 'product:detail' variation.product.slug %}">{{ variation.name }}</a></p
+                              <button type="button"><a href="{% url 'cart:remove' variation.id %}">Remove Item</a></button>
+                                    
+                            {% endif %}
+                      {% endfor %}
+                  {%endif%}
+              {% endfor %}
+    {% endfor %}
+
+  {% endcomment %}

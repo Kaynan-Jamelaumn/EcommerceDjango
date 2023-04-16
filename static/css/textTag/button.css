@@ -1,0 +1,208 @@
+
+button.button{
+  border: 0;
+  min-height: 60px;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+
+a.button{
+  cursor:pointer;
+  word-wrap: break-word;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+
+}
+
+.button-box{
+  text-align: center;
+}
+.button-box a.button{
+  width: 100%;
+}
+
+.button-box button.button{
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+
+a.button-xs{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 15px;
+  line-height: 15px; /* Add this line */
+  text-align:center;
+}
+
+a.button-s{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 30px;
+  line-height: 30px; /* Add this line */
+  text-align:center;
+}
+
+a.button-m{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 45px;
+  line-height: 45px; /* Add this line */
+  text-align:center;
+}
+
+a.button-l{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px; /* Add this line */
+}
+
+a.button-xl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 75px;
+  line-height: 75px; /* Add this line */
+  text-align:center;
+}
+
+a.button-xxl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 90px;
+  line-height: 90px; /* Add this line */
+  text-align:center;
+}
+
+a.button-xxxl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 105px;
+  line-height: 105px; /* Add this line */
+  text-align:center;
+}
+
+a.button-mega{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 120px;
+  line-height: 120px; /* Add this line */
+  text-align:center;
+}
+
+
+a.button-megazord{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 135px;
+  line-height: 135px; /* Add this line */
+  text-align:center;
+}
+
+
+button.button-xs{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 15px;
+  line-height: 15px; /* Add this line */
+  text-align:center;
+}
+
+button.button-s{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 30px;
+  line-height: 30px; /* Add this line */
+  text-align:center;
+}
+
+button.button-m{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 45px;
+  line-height: 45px; /* Add this line */
+  text-align:center;
+}
+
+button.button-l{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px; /* Add this line */
+}
+
+button.button-xl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 75px;
+  line-height: 75px; /* Add this line */
+  text-align:center;
+}
+
+button.button-xxl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 90px;
+  line-height: 90px; /* Add this line */
+  text-align:center;
+}
+
+button.button-xxxl{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 105px;
+  line-height: 105px; /* Add this line */
+  text-align:center;
+}
+
+button.button-mega{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 120px;
+  line-height: 120px; /* Add this line */
+  text-align:center;
+}
+
+
+button.button-megazord{
+  cursor:pointer;
+  word-wrap: break-word;
+  display: inline-block;
+  min-height: 135px;
+  line-height: 135px; /* Add this line */
+  text-align:center;
+}
+
+
+
+.button-separator{
+  display:grid;
+  grid-template-rows: 96.5% 20%;
+  
+}
+
+
+

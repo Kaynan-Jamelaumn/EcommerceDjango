@@ -1,0 +1,70 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap');
+
+
+:root{
+  --orange: orange;
+  --orange-vibrant: #F2762E;
+  
+  --red: #EB455F;
+  --red-orange: #f75360;
+  --red-pale: #ED5F74;
+  
+  --green: #70ff9b;
+  --green-pale: #5fcf80;
+  --green-light: #7ADCA2;
+  --green-rich: #46C48A;
+  --green-shade-1:#2ecf8f;
+  --green-shade-2: #44B78B;
+  --green-shade-3: #93D7B7;
+  
+  --white: #e9f1ed;
+  --white-vibrant: #fafafa;
+  --white-pale: #f0e6e6;
+  
+  --black: #2C3333;
+  --black-pale: #404444;
+  --black-vibrant: black;
+  --black-shade-1: #181d27;
+  
+  --purple:#7046C4;
+  --purple-pale: #8B65D6;
+  --purple-dead: #635985;
+  --purple-shade-1: #712CF9;
+  
+  --blue: #7f8ae9;
+  --blue-light: #8fc8fb;
+  --blue-light-pale:#9ac0fd;
+  --blue-rich: #01A9DE;
+  
+  --gray: #cfd8d6;
+
+
+  /* */
+  
+  --main_font:'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    --mini_font: 10px;
+    --small_font: 12px;
+    --normal_font: 16px;
+    --odd_font:20px;
+    --big_font:25px;
+    --giga_font: 30px;
+    --mega_font: 45px;
+    --megazord_font: 50px;
+    --title_font:60px;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none
+}
+

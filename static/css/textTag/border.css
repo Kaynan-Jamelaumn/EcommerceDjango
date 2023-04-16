@@ -1,0 +1,170 @@
+
+.borderless {
+  border: 0;
+
+}
+
+.border-xs {
+  border-width: 0, 5px;
+  border-style: solid;
+}
+
+.border-s {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.border-m {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.border-l {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.border-xl {
+  border-width: 4px;
+  border-style: solid;
+}
+
+.border-xl {
+  border-width: 6px;
+  border-style: solid;
+}
+
+.border-xxl {
+  border-width: 8px;
+  border-style: solid;
+}
+
+.border-xxxl {
+  border-width: 16px;
+  border-style: solid;
+}
+
+.border-mega {
+  border-width: 32px;
+  border-style: solid;
+}
+
+.border-megazord {
+  border-width: 64px;
+  border-style: solid;
+}
+
+
+/*
+.underline-xs:hover:after {
+  width:100%;
+}
+
+.relative{
+  position: relative;
+}
+
+.underline-xs:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-s:hover:after {
+  width:100%;
+}
+
+.underline-s:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 5px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-m:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 7px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-l:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 9px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-xl:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 12px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-xxl:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 15px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-xxxl:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 18px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-mega:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 21px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+.underline-megazord:after {
+  content: "";
+  position: absolute;
+  background-color: var(--red);
+  height: 24px;
+  width: 0;
+  left: 0;
+  bottom: -3px;
+  transition: 1s;
+}
+
+*/

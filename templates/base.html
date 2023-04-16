@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
+      {% include 'partials/_head.html' %}
+      <title>{% block title%}{%endblock%}</title>
+  </head>
+  <body class="bg-black-pale">
+        {% include 'partials/_scripts.html' %}  
+    <nav class='main-nav bg-black'>
+        {% include 'partials/_nav.html'%}
+    </nav>
+    <main>
+       {%block content%}{%endblock%}
+    </main>
+
+    {% comment %}
+      {% load static %}
+      {% for js_file in 'js/**/*.js' %}
+        <script src="{% static js_file %}"></script>
+      {% endfor %}
+    {% endcomment%}
+  </body>
+
+</html>

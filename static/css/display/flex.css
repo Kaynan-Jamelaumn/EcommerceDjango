@@ -1,0 +1,64 @@
+.sflex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-avarage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cflex {
+  display: flex;
+  flex-direction: column;
+  /* background-color: black; */
+}
+
+.self-end {
+  align-content: flex-end;
+}
+
+.self-center {
+  align-self: flex-center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space {
+  justify-content: space-evenly;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

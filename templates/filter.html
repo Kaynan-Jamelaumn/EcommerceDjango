@@ -1,0 +1,31 @@
+  <nav class="filter w100 pointer">
+    <button class="filter-button w100 bg-black pointer white-pale font-xl py-10" type="button"><i
+        class="fa-solid fa-filter"> Filters</i></button>
+    <u class="hidden category bg-green-pale white font-l">
+
+      {% for category in categories %}
+
+      <li>
+        <div class="pl-20 py-15 category-button orange-active bg-black-active flex-avarage items-center"><i
+            class="pr-10 fa-solid fa-plus"></i><!--<a href="{{category.get_absolute_url}}">{{category.name}}</a>-->
+          <p class="font-xl">{{category.name}}</p>
+        </div>
+        <ul class="hidden subcategory">
+          <li class="sub-hover">
+            <div class="flex-avarage"><a class="pl-50 py-15 w100 white font-xl bg-black-active orange-active"
+                href="{{category.get_absolute_url}}">{{category.name}}</a></div>
+          </li>
+          {% for subcategory in subcategories %}
+          {% if category.id == subcategory.category.id%}
+
+          <li class="sub-hover">
+            <div class="flex-avarage"><a class="pl-50 py-15 w100 white font-xl bg-black-active orange-active"
+                href="{{subcategory.get_absolute_url}}">{{subcategory.name}}</a></div>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </u>
+  </nav>

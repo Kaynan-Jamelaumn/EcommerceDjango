@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <form action="{% url 'account:update' %}" method="POST">
+    {% csrf_token %}
+    <div class="w90 auto radius-10 border-xl border-white bg-black white-vibrant font-xl">
+      <div class="main_css h4 alert" role="alert">
+        {% if message %}
+        <div class="alert alert-danger" role="Alert">
+          <h3>{{message}}</h3>
+        </div>
+        {% endif %}
+        <div class="w80 auto">
+          <div class="my-15">
+            <label for="password" class="weight-500">Password</label>
+            <input type="password" class="input radius-3 bg-purple-pale white" id="password" placeholder="Password"
+              name="password"></input>
+          </div>
+        </div>
+
+        <div class="w80 auto">
+          <div class="my-15">
+            <label for="password" class="weight-500">Password Confirmation</label>
+            <input type="password" class="input radius-3 bg-purple-pale white" id="password_confirmation"
+              placeholder="Password Confirmation" name="password_confirmation"></input>
+          </div>
+        </div>
+        <div class="button-box w80 auto">
+          <button type="submit" class="button-l w100 mt-15 mb-35 bg-purple-pale bg-purple-active white white-pale-active font-xxxl radius-3">
+            Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

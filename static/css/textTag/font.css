@@ -1,0 +1,111 @@
+.font-xs {
+  font-size: 10px;
+}
+
+.font-s {
+  font-size: 12px;
+}
+
+.font-m {
+  font-size: 16px;
+}
+
+.font-l {
+  font-size: 20px;
+}
+
+.font-xl {
+  font-size: 25px;
+}
+
+.font-xxl {
+  font-size: 30px;
+}
+
+.font-xxxl {
+  font-size: 45px;
+}
+
+.font-mega {
+  font-size: 50px;
+}
+
+.font-megazord {
+  font-size: 60px;
+}
+
+.font-xxs-em {
+  font-size: 3em;
+}
+
+.font-xs-em {
+  font-size: 10em;
+}
+
+.font-s-em {
+  font-size: 12em;
+}
+
+.font-m-em {
+  font-size: 16em;
+}
+
+.font-l-em {
+  font-size: 20em;
+}
+
+.font-xl-em {
+  font-size: 25em;
+}
+
+.font-xxl-em {
+  font-size: 30em;
+}
+
+.font-xxxl-em {
+  font-size: 45em;
+}
+
+.font-mega-em {
+  font-size: 50em;
+}
+
+.font-megazord-em {
+  font-size: 60em;
+}
+
+.font-xs-pc {
+  font-size: 100%;
+}
+
+.font-s-pc {
+  font-size: 120%;
+}
+
+.font-m-pc {
+  font-size: 160%;
+}
+
+.font-l-pc {
+  font-size: 200%;
+}
+
+.font-xl-pc {
+  font-size: 250%;
+}
+
+.font-xxl-pc {
+  font-size: 300%;
+}
+
+.font-xxxl-pc {
+  font-size: 450%;
+}
+
+.font-mega-pc {
+  font-size: 500%;
+}
+
+.font-megazord-pc {
+  font-size: 600%;
+}

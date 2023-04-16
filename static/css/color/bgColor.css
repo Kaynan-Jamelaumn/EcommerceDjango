@@ -1,0 +1,256 @@
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-white-pale {
+  background-color: var(--white-pale);
+}
+
+.bg-white-vibrant {
+  background-color: var(--white-vibrant);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-black-pale {
+  background-color: var(--black-pale);
+}
+
+.bg-black-vibrant {
+  background-color: var(--black-vibrant);
+}
+
+.bg-black-1 {
+  background-color: var(--black-shade-1);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-red-pale {
+  background-color: var(--red-pale);
+}
+
+.bg-red-orange {
+  background-color: var(--red-orange);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-orange-vibrant {
+  background-color: var(--orange-vibrant);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green-pale {
+  background-color: var(--green-pale);
+}
+
+.bg-green-light {
+  background-color: var(--green-light);
+}
+
+.bg-green-rich {
+  background-color: var(--green-rich);
+}
+
+.bg-green-1 {
+  background-color: var(--green-shade-1);
+}
+
+.bg-green-2 {
+  background-color: var(--green-shade-2);
+}
+
+.bg-green-3 {
+  background-color: var(--green-shade-3);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-purple-pale {
+  background-color: var(--purple-pale);
+}
+
+.bg-purple-dead {
+  background-color: var(--purple-dead);
+}
+
+.bg-purple-1 {
+  background-color: var(--purple-shade-1);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-blue-light {
+  background-color: var(--blue-light);
+}
+
+.bg-blue-light-pale {
+  background-color: var(--blue-light-pale);
+}
+
+.bg-blue-rich {
+  background-color: var(--blue-rich);
+}
+
+.bg-white-active:hover,
+.bg-white-active:active {
+  background-color: var(--white);
+}
+
+.bg-black-active:hover,
+.bg-black-active:active {
+  background-color: var(--black);
+}
+
+.bg-black-pale-active:hover,
+.bg-black-pale-active:active {
+  background-color: var(--black-pale);
+}
+
+.bg-black-vibrant-active:hover,
+.bg-black-vibrant-active:active {
+  background-color: var(--black-vibrant);
+}
+
+.bg-black-1-active:hover,
+.bg-black-1-active:active {
+  background-color: var(--black-shade-1);
+}
+
+.bg-blue-active:hover,
+.bg-blue-active:active {
+  background-color: var(--blue);
+}
+
+.bg-blue-light-active:hover,
+.bg-blue-light-active:active {
+  background-color: var(--blue-light);
+}
+
+.bg-blue-light-pale-active:hover,
+.bg-blue-light-pale-active:active {
+  background-color: var(--blue-light-pale);
+}
+
+.bg-blue-rich-active:hover,
+.bg-blue-rich-active:active {
+  background-color: var(--blue-rich);
+}
+
+.bg-gray-active:hover,
+.bg-gray-active:active {
+  background-color: var(--gray);
+}
+
+.bg-green-active:hover,
+.bg-green-active:active {
+  background-color: var(--green);
+}
+
+.bg-green-light-active:hover,
+.bg-green-light-active:active {
+  background-color: var(--green-light);
+}
+
+.bg-green-pale-active:hover,
+.bg-green-pale-active:active {
+  background-color: var(--green-pale);
+}
+
+.bg-green-rich-active:hover,
+.bg-green-rich-active:active {
+  background-color: var(--green-rich);
+}
+
+.bg-green-1-active:hover,
+.bg-green-1-active:active {
+  background-color: var(--green-shade-1);
+}
+
+.bg-green-2-active:hover,
+.bg-green-2-active:active {
+  background-color: var(--green-shade-2);
+}
+
+.bg-green-3-active:hover,
+.bg-green-3-active:active {
+  background-color: var(--green-shade-3);
+}
+
+.bg-orange-active:hover,
+.bg-orange-active:active {
+  background-color: var(--orange);
+}
+
+.bg-orange-vibrant-active:hover,
+.bg-orange-vibrant-active:active {
+  background-color: var(--orange-vibrant);
+}
+
+.bg-purple-active:hover,
+.bg-purple-active:active {
+  background-color: var(--purple);
+}
+
+.bg-purple-pale-active:hover,
+.bg-purple-pale-active:active {
+  background-color: var(--purple-pale);
+}
+
+.bg-purple-dead-active:hover,
+.bg-purple-dead-active:active {
+  background-color: var(--purple-dead);
+}
+
+.bg-purple-1-active:hover,
+.bg-purple-1-active:active {
+  background-color: var(--purple-shade-1);
+}
+
+.bg-red-active:hover,
+.bg-red-active:active {
+  background-color: var(--red);
+}
+
+.bg-red-pale-active:hover,
+.bg-red-pale-active:active {
+  background-color: var(--red-pale);
+}
+
+.bg-red-orange-active:hover,
+.bg-red-orange-active:active {
+  background-color: var(--red-orange);
+}
+
+.bg-white-active:hover,
+.bg-white-active:active {
+  background-color: var(--white);
+}
+
+.bg-white-pale-active:hover,
+.bg-white-pale-active:active {
+  background-color: var(--white-pale);
+}
+
+.bg-white-vibrant-active:hover,
+.bg-white-vibrant-active:active {
+  background-color: var(--white-vibrant);
+}

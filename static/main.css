@@ -1,0 +1,204 @@
+/* god config */
+body {
+  font-family: 'Roboto', sans-serif;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  max-width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "main-nav"
+    "content";
+}
+
+/* ------------------------------- */
+/* QUICK Setup */
+input,
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+.clear {
+  clear: both;
+}
+
+::placeholder {
+  color: white;
+}
+
+.container a,
+current-category li {
+  font-family: "Gotham Rounded A", "Gotham Rounded B", "Gotham Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  margin-bottom: 100px;
+  width:100%;
+  max-width: 100%;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------- */
+
+/* containers */
+
+main {
+  grid-area: content;
+  margin-top: 2.6em;
+}
+
+footer {
+  grid-area: footer;
+}
+
+header {
+  grid-area: header;
+}
+
+.main-nav {
+  grid-area: main-nav;
+}
+
+
+
+.inline-block{
+  display: inline-block;
+}
+
+.block{
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+.auto {
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+
+button{
+  border:none;
+}
+
+.input{
+  width:100%;
+  min-height:30px;
+  border:none;
+  padding:10px;
+}
+
+.select{
+  width:100%;
+  border: none;
+  min-height:30px;
+  padding:6px;
+}
+
+.input-crude{
+  width:100%;
+  border:none;
+  padding:10px;
+}
+
+.select-crude{
+  width:100%;
+  border: none;
+  padding:6px;
+}
+
+
+
+
+.img-limiter {
+  width: 80%;
+  margin: auto;
+  
+}
+
+.img-limiter img {
+  top:0;
+  min-height: 150px;
+  max-height: 200px;
+/*
+  max-height:calc(100% < 260px ? 100% : 260px);*/
+  max-width: 100%;
+}
+
+
+.relative {
+  position: relative;
+}
+
+
+
+
+
+.card-side-limit {
+  display: grid;
+  grid-template-columns: 1fr repeat(auto-fit, minmax(0, 250px));
+  grid-template-rows: 1fr;
+  max-width: 700px;
+  max-height: 100%;
+  grid-column-gap: 10px; 
+}
+
+.card-side-limit > :first-child {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+
+
+.card-side-limit > :nth-child(n+2):not([style*="display: none"]) {
+  display: block;
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+.card-side-limit > :nth-child(n+2):empty,
+.card-side-limit > :nth-child(n+2)[style*="display: none"] {
+  display: none;
+  grid-row-start: 1;
+  grid-column-start: 1 / 3;
+}
+
+
+@media screen and (max-width: 700px) {
+  .card-side-limit{
+    display: block;
+  }
+
+  .card-side-limit  > *:not(:first-child){
+    margin-top:15px;
+  }
+
+}

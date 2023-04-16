@@ -1,0 +1,41 @@
+{% load static %}
+<div>
+  <div class="text-center w100">
+    <div class="w100 sflex items-center">
+      <h2 class="text-center font-xxl green-pale w80">Teste Test</h2>
+      <button class="menu-toggle button-l pointer font-xl bg-black-pale white green-active w20">&#9776;</button>
+      <div class="clear"></div>
+    </div>
+    <div class="menu font-xl w100">
+      <div class="button-group">
+        <a class="button bg-black white-pale green-active" href="{% url 'product:index' %}">Home<i
+            class="fa-solid fa-house ml-10"></i></a>
+        {% if user.is_authenticated %}
+        <a class="button bg-black white-pale green-active" href="{% url 'account:logout' %}">logout<i
+            class="fa-solid fa-right-from-bracket ml-10"></i></a>
+        <a class="button bg-black white-pale green-active" href="{% url 'account:dashboard' %}">Dashboard<i
+            class="fa-solid fa-keyboard ml-10"></i></a>
+        <a class="button bg-black white-pale green-active" href="{% url 'cart:view' %}">Cart<i
+            class="fa-solid fa-cart-shopping ml-10"></i></a>
+        {% else %}
+        <a class="button bg-black white-pale green-active" href="{% url 'account:login' %}">Login<i
+            class="fa-solid fa-user ml-10"></i></a>
+        <a class="button bg-black white-pale green-active" href="{% url 'account:register' %}">Sign Up<i
+            class="fa-solid fa-user-plus ml-10"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="form">
+    <form class="nav-form" method="get" action="{% url 'product:search' %}">
+      <input class="pl-20 font-xl bg-purple-dead white w80 min-h55-px border-l border-green-pale" type="text"
+        value="{{ request.GET.result }}" id="search-input" placeholder="Research" name="result">
+      <button type="submit" class="pointer font-xl bg-green-pale white w20 min-h55-px"><i
+          class="fa fa-search"></i></button>
+    </form>
+    <div class="clear"></div>
+  </div>
+
+
+</div>
+<script src="{% static 'js/miscellaneous/nav.js' %}"></script>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}
+{{category.name}} {{subcategory.name}}
+{%endblock%}
+
+{% block content %}
+<div class="container">
+  <nav class="w100 my-20 radius-20 bg-black">
+    <ul class="flex-avarage justify-center items-center min-h40-px p-5">
+      <li class="m-3">
+        <div class="relative"><a class="underline-s-green green font-xl" href="{% url 'product:index' %}">/Home</a></div>
+      </li>
+      <li class="m-3">
+        <div class="relative ml-10"><a class="underline-s-purple-pale purple-pale font-xl" href="{% url 'product:category' category.id %}">/{{category.name}}</a></div>
+      </li>
+      <li class="m-3">
+        <div class="ml-10"><p class="white-pale font-xl">/{{subcategory.name}}</p> </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="mx-30">
+    <div class="w100 card mt-15">
+      {% for product in products %}
+      <div class="cflex space-between radius-10 border-xl border-white bg-black font-l w100 text-center white">
+          <div class="my-5">
+            <a class="font-xl white green-active relative underline-s-green" href="{% url 'product:detail' product.slug %}">{{product.name}}</a>
+          </div>
+          <!--...
+                  <a class="h4 mt-2" href="{{product.get_absolute_url}}">{{product.name}}</a>
+                  -->
+          {% if product.image %}
+          <div class="img-limiter">
+            <img src="{{product.image.url}}" class="" alt="{{product.image.url}}">
+          </div>
+          {% else %}
+          <div class="img-limiter">
+            <img src="/media/image.jpg" alt="no image">
+          </div>
+          {% endif %}
+          
+          {% for variation in product.productvariation_set.all %}
+            {% if variation.product.id == product.id %}
+              {% if forloop.first %}
+                {% if product.on_promotion == True %}
+                  {% if variation.on_promotion == True %}
+                    {% if variation.promotion_price %}
+                      <p class="mt-3"> Original Price: {{variation.price}}</p>
+                      <p class="mt-3"> Current price in promotion: {{variation.promotion_price}}</p>
+                    {% else %}
+                      <p class="mt-3"> Price: {{variation.price}}</p>
+                    {% endif %}
+                  {% else %}
+                    <p class="mt-3"> Price: {{variation.price}}</p>
+                  {% endif %}
+                {% else %}
+                  <p class="mt-3">Price: {{variation.price}}</p>
+                {% endif %}
+                
+                {% if variation.short_description %}
+                  <p class="mt-3">{{variation.short_description}}</p>
+                {% endif %}
+              <div class="button-box bg-black-vibrant mt-3">
+        
+                <a class="button py-3 bg-purple bg-purple-pale-active white white-pale-active font-xxl"
+                  href="{% url 'product:detail' product.slug %}"> Variations</a>
+        
+                {% if variation.stock >= 1 %}
+                <button type="submit" data-variation_id="{{variation.id}}"
+                  class="add_to_cart_button button w100 bg-green-rich bg-green-light-active white  font-xxl ">Add To <i
+                    class="fa-solid fa-cart-shopping"></i></button>
+                {% else %}
+                <p class="h60-px flex-avarage items-center justify-center px-3">Out of stock, check other variations</p>
+                {% endif %}
+              </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+      {% include 'partials/_paginator.html' %}
+  </div>
+</div>
+<script> 
+const url_add_to_cart ='{% url "cart:add" %}'
+const csrf_token = "{{csrf_token}}"
+</script>
+<script src="{% static 'js/miscellaneous/filter.js' %}"></script>
+<script src="{% static 'js/product/addToCart.js' %}"></script>
+{% endblock %}
