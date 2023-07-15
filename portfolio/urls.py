@@ -3,6 +3,7 @@ from django.shortcuts import render
 from . import views
 app_name = "portfolio"
 urlpatterns = [
-    path('', views.portfolio, name="portfolio")
+    path('', views.portfolio, name="portfolio"),
+    path('en', views.portfolioEn, name="portfolioEn")
 
 ]
