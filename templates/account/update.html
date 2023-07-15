@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <form action="{% url 'account:update' %}" method="POST">
+  <form action="{% url 'ecommerce:account:update' %}" method="POST">
     {% csrf_token %}
     <div class="w90 auto radius-10 border-xl border-white bg-black white-vibrant font-xl">
       <div class="main_css h4 alert" role="alert">
@@ -26,9 +26,9 @@
               placeholder="Password Confirmation" name="password_confirmation"></input>
           </div>
         </div>
-        <div class="button-box w80 auto">
-          <button type="submit" class="button-l w100 mt-15 mb-35 bg-purple-pale bg-purple-active white white-pale-active font-xxxl radius-3">
-            Submit</button>
+        <div class="button-box w80 auto text-center">
+          <button class="button-l my-20 radius-7 bg-purple-pale bg-purple-6-active white white-pale-active font-xxl"
+            type="submit"> Submit</button>
         </div>
       </div>
     </div>

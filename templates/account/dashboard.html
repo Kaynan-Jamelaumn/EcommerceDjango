@@ -5,9 +5,9 @@
 <div class="container">
   <div class="button-box w80 auto">
     <a class="radius-5 button font-xxl bg-purple bg-purple-pale-active white white-pale-active"
-      href="{% url 'account:address' %}">Addresses</a>
-    <a class="mt-25 radius-5 button font-xxl bg-green-rich bg-green-pale-active white white-pale-active"
-      href="{% url 'account:update'%}">Change Password</a>
+      href="{% url 'ecommerce:account:address' %}">Addresses</a>
+    <a class="mt-25 radius-5 button font-xxl bg-green-4 bg-green-pale-active white white-pale-active"
+      href="{% url 'ecommerce:account:update'%}">Change Password</a>
   </div>
 
   <div class="w100 text-center">
@@ -16,13 +16,14 @@
     {% endif %}
 
   </div>
-  <h2 class="font-megazord text-center mt-20 white">Orders</h2>
+  <h2 class="font-megazord text-center mt-20 green-4">Orders</h2>
   <div class="mx-30">
     <div class="w100 card-l">
 
       {% for order in orders %}
       <div class="w100 p-15 bg-black border-l border-white mt-20 radius-5 white font-m">
-        <a class="green font-l relative underline-s-green" href="{% url 'order:order_info' order.id %}"> See Itens in
+        <a class="green font-l relative underline-s-green" href="{% url 'ecommerce:order:order_info' order.id %}"> See
+          Itens in
           Order</a>
         <p class="my-10">Order : {{order.id}}</p>
         <p class="my-10">State: {{order.address.state}} </p>

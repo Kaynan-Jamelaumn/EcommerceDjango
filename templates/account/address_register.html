@@ -5,31 +5,31 @@
 
 {% block content %}
 <div class="container">
-  <form method="POST" action="{% url 'account:address-register' %}">
+  <form method="POST" action="{% url 'ecommerce:account:address-register' %}">
     {% csrf_token %}
-    <div class="w90 radius-10 bg-black auto border-xl border-white white font-xl weight-500">
-      <div class="auto w85">
+    <div class="w90 w50-l radius-5 bg-black auto border-xl border-white white font-xl weight-500">
+      <div class="auto w80">
         <div class="mt-15">
           <label for="address">Address</label>
           <input class="input radius-3 bg-purple-pale white" type="text" id="address" placeholder="Address"
             name="address" autocomplete="off">
         </div>
       </div>
-      <div class="auto w85">
+      <div class="auto w80">
         <div class="mt-15">
           <label for="number">Number</label>
           <input class="input radius-3 bg-purple-pale white" type="text" id="number" placeholder="Number" name="number"
             autocomplete="off">
         </div>
       </div>
-      <div class="auto w85">
+      <div class="auto w80">
         <div class="mt-15">
           <label for="postcode">PostCode</label>
           <input class="input radius-3 bg-purple-pale white" type="text" id="postcode" placeholder="PostCode"
             name="postcode" autocomplete="off">
         </div>
       </div>
-      <div class="auto w85">
+      <div class="auto w80">
         <div class="mt-15">
           <label for="select-state">State</label>
           <select class="select radius-3 bg-purple-pale white" name="state" id="select-state">
@@ -41,7 +41,7 @@
           </select>
         </div>
       </div>
-      <div class="auto w85">
+      <div class="auto w80">
         <div class="mt-15">
           <label for="city">Cities</label>
           <select class="select radius-3 bg-purple-pale white" name="city" id="city">
@@ -52,8 +52,8 @@
           </select>
         </div>
       </div>
-      <div class="button-box text-center my-20">
-        <button class="button-l w85 auto radius-7 bg-purple-pale bg-purple-active white white-pale-active font-xxl"
+      <div class="button-box w80 auto text-center">
+        <button class="button-l my-20 radius-7 bg-purple-pale bg-purple-6-active white white-pale-active font-xxl"
           type="submit"> Submit</button>
       </div>
     </div>

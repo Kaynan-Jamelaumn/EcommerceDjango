@@ -6,8 +6,8 @@
 {% block content %}
 <div class="container">
   <div class="button-box w80 auto">
-    <a class="radius-5 button-xl w100 font-xxl bg-black bg-black-1-active white button-register bg-black-week-active"
-      href="{% url 'account:address-register' %}">Register Address</a>
+    <a class="radius-5 button w100 font-xxl bg-purple bg-purple-pale-active white button-register"
+      href="{% url 'ecommerce:account:address-register' %}">Register Address</a>
   </div>
   <div class="mx-30">
     <div class="w100 card-l">
@@ -22,9 +22,9 @@
         </div>
         <div class="button-group">
           <a class="text-center button-m w45 bg-red bg-purple-pale-active white white-pale-active font-xl radius-5"
-            href="{% url 'account:address_delete' address_object.id %}">Delete</a>
-          <a class="text-center button-m w45 bg-green-pale bg-purple-pale-active white white-pale-active font-xl radius-5"
-            href="{% url 'account:address-edit' address_object.id %}">Edit</a>
+            href="{% url 'ecommerce:account:address_delete' address_object.id %}">Delete</a>
+          <a class="text-center button-m w45 bg-green-4 bg-purple-pale-active white white-pale-active font-xl radius-5"
+            href="{% url 'ecommerce:account:address-edit' address_object.id %}">Edit</a>
         </div>
 
       </div>

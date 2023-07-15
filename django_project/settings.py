@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ('insv1SgopIh5zIRlotOMCymF72r_GLBsz_5ToC00fTc')
+SECRET_KEY = ('insv1SgopZh5zIR3otONCymF72r_XLBsz_5ToC00fTc')
 
 if SECRET_KEY is None:
     print(
@@ -29,7 +29,8 @@ if SECRET_KEY is None:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'jamelaumn.com',
+                 'portfolio.jamelaumn.com', 'ecommerce.jamelaumn.com']
 X_FRAME_OPTIONS = '*'
 
 # Application definition
@@ -37,8 +38,8 @@ X_FRAME_OPTIONS = '*'
 INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'product',
-    'account', 'order', 'cart'
+    'django.contrib.messages', 'django.contrib.staticfiles', 'ecommerceSite.product',
+    'ecommerceSite.account', 'ecommerceSite.order', 'ecommerceSite.cart', 'portfolio', 'ecommerceSite.ecommerce'
 ]
 
 MIDDLEWARE = [
@@ -73,13 +74,26 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+"""
+"""
 
+"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u415940404_ecommerce',  # nome do banco de dados
+        'USER': 'u415940404_jamelaumn',  # nome do usuário
+        'PASSWORD': '!Biscoito007',  # senha do usuário
+        # endereço do servidor de banco de dados (normalmente é localhost)
+        'HOST': '45.132.157.52',
+        # porta do servidor de banco de dados (normalmente é 3306)
+        'PORT': '3306',
     }
 }
+"""
+# virtualenv myenv
+# myenv\Scripts\activate
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -119,13 +133,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
 STATIC_URL = '/static/'
+STATIC_ROOT = 'deploystatic'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
 
 
 # Default primary key field type

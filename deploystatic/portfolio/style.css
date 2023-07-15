@@ -1,0 +1,118 @@
+*,
+body,
+body::before,
+body::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.space-custom {
+  flex-grow: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+}
+
+.space-custom>:nth-child(1) {
+  max-height: 190px;
+}
+
+.space-custom>:nth-child(1)>img {
+  height: 180px;
+}
+
+.space-custom>:nth-child(2) {
+  max-height: 210px;
+  height: 200px;
+  margin-top: auto
+}
+
+.space-custom>:nth-child(3) {
+  max-height: 80px;
+  height: 30px;
+}
+
+.space-custom>:nth-child(2)>p {
+  height: 150px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 764px) {
+  .space-custom {
+    height: auto;
+    display: block;
+    max-height: none;
+  }
+
+  .space-custom> :nth-child(2) {
+    height: auto;
+    max-height: none;
+  }
+
+  .space-custom> :nth-child(2)>p {
+    height: auto;
+    max-height: none;
+  }
+
+  .space-custom> :nth-child(3) {
+    height: auto;
+  }
+
+
+}
+
+
+#main-menu {
+  z-index: 1;
+  transform: translateX(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background-color: #333;
+  transition: 1s;
+
+}
+
+#main-menu.show {
+  transform: translateX(0%);
+  transition: 1s;
+}
+
+#burger-button {
+  display: block;
+  left: 0px;
+  position: absolute;
+}
+
+#close-button {
+  display: block;
+}
+
+.box-collider {
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .box-collider {
+    display: block;
+  }
+
+  #burger-button {
+    width: 100%;
+    background-color: #333;
+    position: static;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  #main-menu {
+    width: 320px;
+  }
+}

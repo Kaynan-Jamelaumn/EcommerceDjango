@@ -1,49 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
 {%block title%}
-  {% if detailproduct %}
-    {{detailproduct.name}}
-  {% else %}
-    Ecommerce
-  {% endif %}
+{% if detailproduct %}
+{{detailproduct.name}}
+{% else %}
+Ecommerce
+{% endif %}
 {%endblock%}
 {% block content %}
 
 
 
 <div class="container">
-  <nav class="w100 my-10 radius-20 bg-black">
-    <ul class="items-center justify-center flex-avarage min-h40-px p-5">
+  <nav class="w100 my-20 radius-20 bg-black">
+    <ul class="flex-center min-h40-px">
       <li class="m-3">
-        <div class="relative"><a class="underline-s-green green font-l" href="{% url 'product:index' %}">/ Home</a>
+        <div class="relative"><a class="underline-s-green green font-l" href="{% url 'ecommerce:product:index' %}">/
+            Home</a>
         </div>
       </li>
       <li class="m-3">
         <div class="relative ml-10"><a class="underline-s-purple-pale purple-pale font-l"
-            href="{% url 'product:category' category.id %}">/ {{category.name}}</a></div>
+            href="{% url 'ecommerce:product:category' category.id %}">/ {{category.name}}</a></div>
         {% comment %}
         <div><a
-            href="{% url 'product:subcategory' category_id=subcategory.category.id subcategory_id=subcategory.id %}">/
+            href="{% url 'ecommerce:product:subcategory' category_id=subcategory.category.id subcategory_id=subcategory.id %}">/
             {{ subcategory.name }}</a></div>
         {% endcomment %}
 
       </li>
       {% if subcategory.id %}
-        <li class="m-3">
-          <div class="relative ml-10">
-            <a class="underline-s-orange orange font-l"
-              href="{% url 'product:subcategory' category.id subcategory.id %}">/ {{subcategory.name}}</a>
-          </div>
-        </li>
+      <li class="m-3">
+        <div class="relative ml-10">
+          <a class="underline-s-orange orange font-l"
+            href="{% url 'ecommerce:product:subcategory' category.id subcategory.id %}">/ {{subcategory.name}}</a>
+        </div>
+      </li>
       {% endif %}
 
       {% if subsubcategory.id %}
-        <li class="m-3">
-          <div class="relative ml-10">
-            <a class="underline-s-orange orange font-l"
-              href="{% url 'product:subcategory' category.id subcategory.id %}">/ {{subsubcategory.name}}</a>
-          </div>
-        </li>
+      <li class="m-3">
+        <div class="relative ml-10">
+          <a class="underline-s-orange orange font-l"
+            href="{% url 'ecommerce:product:subcategory' category.id subcategory.id %}">/ {{subsubcategory.name}}</a>
+        </div>
+      </li>
       {% endif %}
     </ul>
   </nav>
@@ -55,50 +56,52 @@
             <a class="h4 mt-2" href="{{product.get_absolute_url}}">{{product.name}}</a>
             -->
         {% if detailproduct.image %}
-          <div class="img-limiter">
-            <img src="{{ detailproduct.image.url}}" alt="{{ detailproduct.image.url}}">
-          </div>
+        <div class="img-limiter">
+          <img src="{{ detailproduct.image.url}}" alt="{{ detailproduct.image.url}}">
+        </div>
         {% else %}
-          <div class="img-limiter">
-            <img src="/media/image.jpg" alt="no image">
-          </div>
+        <div class="img-limiter">
+          <img src="/media/image.jpg" alt="no image">
+        </div>
         {% endif %}
         {% for variation in detailproduct.productvariation_set.all %}
-          {% if variation.product.id == detailproduct.id %}
-            {% if forloop.first %}
-              {% if product.on_promotion == True %}
-                {% if variation.on_promotion == True %}
-                  {% if variation.promotion_price %}
-                    <p id="price" class="mt-3">Price: {{variation.price}}</p>
-                    <p id="promotion_price" class="mt-3">Promotion Price: {{variation.promotion_price}}</p>
-                  {% else %}
-                    <p id="price" class="mt-3">Price:{{variation.price}}</p>
-                  {% endif %}
-                {% else %}
-                  <p id="price" class="mt-3">Price:{{variation.price}}</p>
-                {% endif %}
-              {% else %}
-                <p id="price" class="mt-3">Price:{{variation.price}}</p>
-              {% endif %}
-              <p id="promotion_price" class="mt-3"></p>
-              <p id="description" class="mt-3">{{variation.long_description}}</p>
-              <div class="w100 mt-3">
-              {% if variation.stock == 0 %}
-                <input type="text" class="input-xxl bg-red white mt-3" id="quantity" data-max-quantity="{{variation.stock}} placeholder="No Stock Available" disabled style="background-color: #EB455F;">
-              {% else %}
-                <input type="text" class="input-xxl bg-green-pale white mt-3" id="quantity"
+        {% if variation.product.id == detailproduct.id %}
+        {% if forloop.first %}
+        {% if product.on_promotion == True %}
+        {% if variation.on_promotion == True %}
+        {% if variation.promotion_price %}
+        <p id="price" class="mt-3">Price: {{variation.price}}</p>
+        <p id="promotion_price" class="mt-3">Promotion Price: {{variation.promotion_price}}</p>
+        {% else %}
+        <p id="price" class="mt-3">Price:{{variation.price}}</p>
+        {% endif %}
+        {% else %}
+        <p id="price" class="mt-3">Price:{{variation.price}}</p>
+        {% endif %}
+        {% else %}
+        <p id="price" class="mt-3">Price:{{variation.price}}</p>
+        {% endif %}
+        <p id="promotion_price" class="mt-3"></p>
+        <p id="description" class="mt-3">{{variation.long_description}}</p>
+        <div class="w100 mt-3">
+          {% if variation.stock == 0 %}
+          <input type="text" class="input-xxl bg-red white mt-3" id="quantity"
+            data-max-quantity="{{variation.stock}} placeholder=" No Stock Available" disabled
+            style="background-color: #EB455F;">
+          {% else %}
+          <input type="text" class="input-xxl bg-green-pale white mt-3" id="quantity"
             data-max-quantity="{{variation.stock}}" placeholder="Items in stock: {{variation.stock}}">
 
-              {% endif %}
-
-            {% endif %}
           {% endif %}
-        {% endfor %}
+
+          {% endif %}
+          {% endif %}
+          {% endfor %}
           <select id="select-variation" class="select-l radius-3 bg-purple white">
             {% for variation in detailproduct.productvariation_set.all %}
-              {% if variation.product.id == detailproduct.id %}
-                <option class="white" value="{{variation.id}}">{{variation.name}}</option>
-              {% endif %}
+            {% if variation.product.id == detailproduct.id %}
+            <option class="white" value="{{variation.id}}">{{variation.name}}</option>
+            {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -111,17 +114,17 @@
       <div class="carousel-box">
         <div class="carousel-container">
           {% if detailproduct.extraproductpicture_set.all %}
-            {% for picture in detailproduct.extraproductpicture_set.all %}
-              {% if picture %}
-                <div class="img-limiter-carousel">
-                  <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{picture.image.url}}">
-                </div>
-              {% else %}
-                <div class="img-limiter">
-                  <img src="/media/image.jpg" alt="no image">
-                </div>
-              {% endif %}
-            {% endfor %}
+          {% for picture in detailproduct.extraproductpicture_set.all %}
+          {% if picture %}
+          <div class="img-limiter-carousel">
+            <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{picture.image.url}}">
+          </div>
+          {% else %}
+          <div class="img-limiter">
+            <img src="/media/image.jpg" alt="no image">
+          </div>
+          {% endif %}
+          {% endfor %}
           {% endif %}
 
           <button class="carousel-prev font-xl">Prev</button>
@@ -129,75 +132,75 @@
         </div>
 
         {% for variation in detailproduct.productvariation_set.all %}
-          <div class="mt-10">
-            <div class="carousel-container {% if forloop.first %} show {% else %} hidden {% endif %}"
-              value="{{variation.id}}">
-              {% for extra_picture in variation.extravariationproductpicture_set.all %}
-                {% if extra_picture %}
-                  <div class="img-limiter-carousel">
-                    <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{extra_picture.image.url}}">
-                  </div>
-
-                {% else %}
-                  <div class="img-limiter">
-                    <img src="/media/image.jpg" alt="no image">
-                  </div>
-                {% endif %}
-              {% endfor %}
-              <button class="carousel-prev font-xl">Prev</button>
-              <button class="carousel-next font-xl">Next</button>
+        <div class="mt-10">
+          <div class="carousel-container {% if forloop.first %} show {% else %} hidden {% endif %}"
+            value="{{variation.id}}">
+            {% for extra_picture in variation.extravariationproductpicture_set.all %}
+            {% if extra_picture %}
+            <div class="img-limiter-carousel">
+              <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{extra_picture.image.url}}">
             </div>
+
+            {% else %}
+            <div class="img-limiter">
+              <img src="/media/image.jpg" alt="no image">
+            </div>
+            {% endif %}
+            {% endfor %}
+            <button class="carousel-prev font-xl">Prev</button>
+            <button class="carousel-next font-xl">Next</button>
           </div>
+        </div>
         {% endfor %}
       </div>
       <div class="carousel-box">
         <div class="carousel-container">
           {% if detailproduct.extraproductpicture_set.all %}
-            {% for picture in detailproduct.extraproductpicture_set.all %}
-              {% if picture %}
-                <div class="img-limiter-carousel">
-                  <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{picture.image.url}}">
-                </div>
-              {% else %}
-                <div class="img-limiter">
-                  <img src="/media/image.jpg" alt="no image">
-                </div>
-              {% endif %}
-            {% endfor %}
+          {% for picture in detailproduct.extraproductpicture_set.all %}
+          {% if picture %}
+          <div class="img-limiter-carousel">
+            <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{picture.image.url}}">
+          </div>
+          {% else %}
+          <div class="img-limiter">
+            <img src="/media/image.jpg" alt="no image">
+          </div>
           {% endif %}
-  
+          {% endfor %}
+          {% endif %}
+
           <button class="carousel-prev font-xl">Prev</button>
           <button class="carousel-next font-xl">Next</button>
         </div>
-  
+
         {% for variation in detailproduct.productvariation_set.all %}
-          <div class="mt-10">
-            <div class="carousel-container {% if forloop.first %} show {% else %} hidden {% endif %}"
-              value="{{variation.id}}">
-              {% for extra_picture in variation.extravariationproductpicture_set.all %}
-                {% if extra_picture %}
-                  <div class="img-limiter-carousel">
-                    <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{extra_picture.image.url}}">
-                  </div>
-  
-                {% else %}
-                  <div class="img-limiter">
-                    <img src="/media/image.jpg" alt="no image">
-                  </div>
-                {% endif %}
-              {% endfor %}
-              <button class="carousel-prev font-xl">Prev</button>
-              <button class="carousel-next font-xl">Next</button>
+        <div class="mt-10">
+          <div class="carousel-container {% if forloop.first %} show {% else %} hidden {% endif %}"
+            value="{{variation.id}}">
+            {% for extra_picture in variation.extravariationproductpicture_set.all %}
+            {% if extra_picture %}
+            <div class="img-limiter-carousel">
+              <img class="carousel-image {% if forloop.first %} active {% endif %}" src="{{extra_picture.image.url}}">
             </div>
+
+            {% else %}
+            <div class="img-limiter">
+              <img src="/media/image.jpg" alt="no image">
+            </div>
+            {% endif %}
+            {% endfor %}
+            <button class="carousel-prev font-xl">Prev</button>
+            <button class="carousel-next font-xl">Next</button>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
   </div>
 </div>
 <script>
-  const url_dynamic_add_to_cart_button = "{% url 'cart:add' %}"
-  const url_dynamic_variation_on_change = "{% url 'product:variation_on_change' %}";
+  const url_dynamic_add_to_cart_button = "{% url 'ecommerce:cart:add' %}"
+  const url_dynamic_variation_on_change = "{% url 'ecommerce:product:variation_on_change' %}";
   const csrf_token = "{{csrf_token}}";
 </script>
 <script src="{% static 'js/product/detailAddToCart.js'%}"></script>

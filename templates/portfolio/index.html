@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meu Portfólio ">
+  <title>Portfólio</title>
+
+  <link rel="stylesheet" href="{% static 'portfolio/css/color/bgColor.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/color/bgColor.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/color/borderColor.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/color/fontColor.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/color/rootColor.css' %}">
+
+  <link rel="stylesheet" href="{% static 'portfolio/css/display/flex.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/size/width.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/size/height.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/size/margin.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/size/padding.css' %}">
+
+  <link rel="stylesheet" href="{% static 'portfolio/css/textTag/font.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/textTag/button.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/textTag/radius.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/textTag/border.css' %}">
+
+  <link rel="stylesheet" href="{% static 'portfolio/css/miscellaneous/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'portfolio/main.css' %}">
+</head>
+
+<body class="container bg-black-10 bg-gray-7 bg-black-8 bg-black-2 gradient gradient-diagonal-left font-3">
+  <header class="w100 py-10 px-0">
+    <button id="burger-button"
+      class="pink-4-active mt-5 mt-20-m button-m borderless radius-5 font-megazord ml-20-m p-10 white bg-transparent">&#9776;</button>
+    <h1 class="text-center font-megazord-xs font-megazord-s font-xxs-megazord-m white auto">
+      Meu
+      Portfólio
+    </h1>
+    <nav id="main-menu" class="menu menu-left bg-black-8">
+      <div class="flex-start">
+        <button id="close-button"
+          class="w100 font-xxxl py-10 flex-end button-box bg-purple w100 white gray-active borderless pointer">X</button>
+      </div>
+      <ul class="font-xxxl mt-25 mt-10-inheritance ml-20-inheritance ml-40-l-inheritance">
+        <li>
+          <div class="border-l-l border-transparent border-green-active">
+            <a class="white green-active ml-5 py-10" href="https://github.com/Kaynan-Jamelaumn?tab=repositories"
+              target="_blank">Github<i class="ml-10 fa-brands fa-github"></i></a>
+          </div>
+        </li>
+        <li>
+          <div class="border-l-l border-transparent border-green-active">
+            <a class="white green-active ml-5 py-10" href="https://www.linkedin.com/in/kaynan-jamelaumn/"
+              target="_blank">Linkedin <i class="ml-10 fa-brands fa-linkedin"></i></a>
+          </div>
+        </li>
+        <li>
+          <div class="border-l-l border-transparent border-green-active">
+            <a class="white green-active ml-5 py-10" href="https://www.instagram.com/jamelaumn/"
+              target="_blank">Instagram<i class="ml-10 fa-brands fa-instagram"></i></a>
+          </div>
+        </li>
+        <li>
+          <div class="border-l-l border-transparent border-green-active">
+            <a class="white green-active ml-5 py-10" href="{% static 'portfolio/curriculo.pdf' %}"
+              target="_blank">Currículo <i class="ml-10 fa-solid fa-file"></i></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="w95 w90-l px-20-inheritance auto">
+    <section class="w100">
+      <h2 class="font-mega pink-4">Sobre Mim</h2>
+      <p class="font-xl white mt-15"> Me chamo Kaynan. Meu apelido é Jamelaumn. Amo jogar basquete, estudar japonês e
+        ler, mas minha paixão é codar.</p>
+    </section>
+    <section class="w100 line mt-30 mt-20-vh-m">
+      <div class="w100 w50-l">
+        <h2 class="font-mega pink-4">Tecnologias</h2>
+        <p class="font-xl white mt-15">As que eu estudo no momento são Python junto do framework Django, SQL com MySQL,
+          NoSQL com MongoDB, C#, Unity, JavaScript e um pouco de AWS.</p>
+        <a href="{% static 'portfolio/curriculo.pdf' %}" target="_blank" class="font-xxl pink-2">Meu Currículo<i
+            class="ml-10 fa-solid fa-file"></i></a>
+      </div>
+      <div class="w100 w50-l mt-50 mt-0-l">
+        <img class="img-fluid radius-5 " src="{% static 'portfolio/images/linguagens.jpg' %}"
+          alt="Fotos Linguagens de Programação">
+      </div>
+    </section>
+    <section class="w100 mt-30 mb-30 mt-10-vh-m">
+      <h2 class="font-megazord pink-4">Portfólio</h2>
+      <div class="line justify-center mt-20 mt-30-inheritance pt-5-inheritance mx-15-s-inheritance text-center">
+
+        <div class="space-custom border-m border-red w100 w80-s w45-m w30-l w25-xxl  w20-xxxl bg-black-3 radius-15">
+          <div class="w80 auto">
+            <img class="img-fluid radius-10" src="{% static 'portfolio/images/unitypackage.png' %}"
+              alt="Unity Simple Movements Package">
+          </div>
+          <div class="px-3">
+            <h3 class="font-xxl text-center yellow-3">Simple Movements Unity Package</h3>
+            <p class="font-xl white text-center pt-15">Controle de câmera em primeira e terceira pessoa e movimentos
+              básicos - C# Unity</p>
+          </div>
+          <div class="button-box w50 auto">
+            <a class="button-m radius-40 my-15 my-0-m py-5 bg-gray-8 bg-green-4-active font-mega white white-5-active"
+              href="https://github.com/Kaynan-Jamelaumn/SimpleMovementsPackage" target="blank">Ver</a>
+          </div>
+        </div>
+
+        <div class="space-custom border-m border-red w100 w80-s w45-m w30-l w25-xxl  w20-xxxl bg-black-3 radius-15">
+          <div class="w80 auto">
+            <img class="img-fluid" src="{% static 'portfolio/images/books.png' %}" alt="Books Image">
+          </div>
+          <div class="px-3">
+            <h3 class="font-xxl text-center yellow-3">Eccentric CSS</h3>
+            <p class="font-xl white text-center pt-15">Uma biblioteca css em desenvolvimento.</p>
+          </div>
+          <div class="button-box w50 auto">
+            <a class="button-m radius-40 my-15 my-0-m py-5 bg-gray-8 bg-green-4-active font-mega white white-5-active"
+              href="https://github.com/Kaynan-Jamelaumn/Eccentric-CSS" target="blank">Ver</a>
+          </div>
+        </div>
+
+        <div class="space-custom border-m border-red w100 w80-s w45-m w30-l w25-xxl  w20-xxxl bg-black-3 radius-15">
+          <div class="w80 auto pt-10">
+            <img class="img-fluid" src="{% static 'portfolio/images/ecommerce.png' %}"
+              alt=" E-commerce site printscreen">
+          </div>
+          <div class="px-3">
+            <h3 class="font-xxl text-center yellow-3">E-commerce Site</h3>
+            <p class="font-xl white text-center pt-15">Projeto E-commerce feito com Python, Django, JS, Jquery e uma
+              versão antiga do
+              Eccentric</p>
+          </div>
+          <div class="button-box w50 auto">
+            <a class="button-m radius-40 my-15 my-0-m py-5 bg-gray-8 bg-green-4-active font-mega white white-5-active"
+              href="https://jamelaumn.com/ecommerce" target=" blank">Ver</a>
+          </div>
+        </div>
+
+        <div class="space-custom border-m border-red w100 w80-s w45-m w30-l w25-xxl  w20-xxxl bg-black-3 radius-15">
+          <div class="w80 auto pt-10">
+            <img class="img-fluid radius-10" src="{% static 'portfolio/images/relojoaria.png' %}"
+              alt="Site Relojoária São João">
+          </div>
+          <div class="px-3">
+            <h3 class="font-xxl text-center yellow-3">Reloajoária São João</h3>
+            <p class="font-xl white text-center pt-15">Site da Reloajoária São João - projeto de extensão IFSC -
+              Eccentric, JS, CSS </p>
+          </div>
+          <div class="button-box w50 auto">
+            <a class="button-m radius-40 my-15 my-0-m py-5 bg-gray-8 bg-green-4-active font-mega white white-5-active"
+              href="https://relojoaria-sao-joao.netlify.app/oculos.html" target="blank">Ver</a>
+          </div>
+        </div>
+        <div class="space-custom border-m border-red w100 w80-s w45-m w30-l w25-xxl  w20-xxxl bg-black-3 radius-15">
+          <div class="w80 auto pt-10">
+            <img class="img-fluid radius-10" src="{% static 'portfolio/images/noimage.png' %}"
+              alt=" E-commerce site printscreen">
+          </div>
+          <div class="px-3">
+            <h3 class="font-xxl text-center yellow-3">Bucket File Handler</h3>
+            <p class="font-xl white text-center pt-15"> Pra dar overwrite em alguns arquivos do S3 Da AWS(Têm que ser
+              Refeito)</p>
+          </div>
+          <div class="button-box w50 auto">
+            <a class="button-m radius-40 my-15 my-0-m py-5 bg-gray-8 bg-green-4-active font-mega white white-5-active"
+              href="https://github.com/Kaynan-Jamelaumn/Custom-Bucket-File-Handler-" target="blank">Ver</a>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+  </div>
+  <script src="{% static 'portfolio/js/miscellaneous/gradient.js' %}"></script>
+  <script src="{% static 'portfolio/script.js' %}"></script>
+  <!--
+   <script src="{% static portfolio/js/miscellaneous/menu.js"></script>
+-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+
+</html>

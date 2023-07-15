@@ -20,10 +20,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('product.urls', namespace='product')),
-    path('account/', include('account.urls', namespace='account')),
-    path('order/', include('order.urls', namespace='order')),
-    path('cart/', include('cart.urls', namespace='cart')),
+    path('portfolio/', include('portfolio.urls', namespace='portfolio')),
+    path('ecommerce/', include(('ecommerceSite.ecommerce.urls',
+         'ecommerce'), namespace='ecommerce')),
 ]
 
 if settings.DEBUG:

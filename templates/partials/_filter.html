@@ -1,0 +1,97 @@
+<nav class="w100 pointer">
+  <button class="dropdown-button w100 bg-black pointer white-pale font-xl py-20" type="button"><i
+      class="fa-solid fa-filter"> Filters</i></button>
+  <u class="hidden dropdown bg-green-4 white font-l">
+    {% for category in categories %}
+
+    <li>
+      <div class="pl-20 py-25 dropdown-submenu orange-active bg-black-active flex items-center"><i
+          class="pr-10 fa-solid fa-plus"></i><!--<a href="{{category.get_absolute_url}}">{{category.name}}</a>-->
+        <p class="font-xl">{{category.name}}</p>
+      </div>
+      <ul class="hidden dropdown">
+        <li>
+          <div class="flex"><a class="pl-40 py-15 w100 white font-xl bg-black-active orange-active"
+              href="{{category.get_absolute_url}}">{{category.name}}</a></div>
+        </li>
+        {% for subcategory in subcategories %}
+        {% if category.id == subcategory.category.id %}
+        <li>
+          <div class="dropdown-submenu pl-40 py-15 orange-active bg-black-active flex items-center"><i
+              class="pr-10 fa-solid fa-plus"></i>
+            <p class="font-l">{{subcategory.name}}</p>
+          </div>
+          <ul class="hidden dropdown">
+            <li>
+              <div class="flex">
+                <a class="pl-60 py-15 w100 white font-l bg-black-active orange-active"
+                  href="{{subcategory.get_absolute_url}}">{{subcategory.name}}</a>
+              </div>
+            </li>
+            {% for subsubcategory in subsubcategories %}
+            {% if subcategory.id == subsubcategory.subcategory.id %}
+            <li>
+              <div class="flex"><a class="pl-60 py-15 w100 white font-l bg-black-active orange-active"
+                  href="{{subsubcategory.get_absolute_url}}">{{subsubcategory.name}}</a></div>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </u>
+</nav>
+
+{%comment%}
+<nav class="w100 pointer">
+  <button class="dropdown-button w100 bg-black pointer white-pale font-xl py-10" type="button"><i
+      class="fa-solid fa-filter"> Filters</i></button>
+  <u class="hidden dropdown bg-green-4 white font-l">
+    {% for category in categories %}
+
+    <li>
+      <div class="pl-20 py-15 dropdown-submenu orange-active bg-black-active flex items-center"><i
+          class="pr-10 fa-solid fa-plus"></i><!--<a href="{{category.get_absolute_url}}">{{category.name}}</a>-->
+        <p class="font-xl">{{category.name}}</p>
+      </div>
+      <ul class="hidden dropdown">
+        <li>
+          <div class="flex"><a class="pl-40 py-15 w100 white font-xl bg-black-active orange-active"
+              href="{{category.get_absolute_url}}">{{category.name}}</a></div>
+        </li>
+        {% for subcategory in subcategories %}
+        {% if category.id == subcategory.category.id %}
+        <li>
+          <div class="dropdown-submenu pl-40 py-15 orange-active bg-black-active flex items-center"><i
+              class="pr-10 fa-solid fa-plus"></i>
+            <p class="font-l">{{subcategory.name}}</p>
+          </div>
+          <ul class="hidden dropdown">
+            <li>
+              <div class="flex">
+                <a class="pl-60 py-15 w100 white font-l bg-black-active orange-active"
+                  href="{{subcategory.get_absolute_url}}">{{subcategory.name}}</a>
+              </div>
+            </li>
+            {% for subsubcategory in subsubcategories %}
+            {% if subcategory.id == subsubcategory.subcategory.id %}
+            <li>
+              <div class="flex"><a class="pl-60 py-15 w100 white font-l bg-black-active orange-active"
+                  href="{{subsubcategory.get_absolute_url}}">{{subsubcategory.name}}</a></div>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </u>
+</nav>
+{%endcomment%}

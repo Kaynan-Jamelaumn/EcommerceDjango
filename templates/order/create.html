@@ -3,34 +3,35 @@
 
 {% block content %}
 <div class="container">
-  <form class="mt-30" method="POST" action="{% url 'order:pay' %}">
-      {% csrf_token %}
-      <div class="">
-          
-          <div class="w90 radius-10 bg-black auto border-l border-white white font-l weight-500" role="alert">
-                <div class="my-20 mx-15">
-                      <label for="select-address">Address</label>
-                      <select class="select bg-purple-pale white radius-3 mt-5" name="address" id="select-address">
-                            <option class="white" selected disabled>select</option>
-                            {% for address in addresses %}
-                                <option value="{{address.id}}">{{address.address}}</option>
-                            {% endfor %}
-                      </select>
-                </div>
-                <div class="my-20 mx-15">
-                  Don't have an address?<a class="purple-pale relative underline-s-purple-pale" href="{% url 'account:address-register' %}" >Register it</a>
-                </div>
-                <div class="my-20 mx-15">
-                    <p class=''> You will pay a total of <strong class="">{{total}}</strong> </p>
-                </div>
-                <div class="my-20 mx-15">
-                  <p>Note: may</p>
-                </div>
-                <div class="my-20 mx-15 button-box">
-                    <button type="submit" class="button white white-pale-active bg-purple-pale bg-purple-active font-xxl radius-5"> Submit</button>
-                </div>
-          </div>
-      </div>   
+  <form class="mt-30" method="POST" action="{% url 'ecommerce:order:pay' %}">
+    {% csrf_token %}
+    <div>
+      <div class="w90 radius-10 bg-black auto border-l border-white white font-l weight-500" role="alert">
+        <div class="my-20 mx-15">
+          <label for="select-address">Address</label>
+          <select class="select bg-purple-pale white radius-3 mt-5" name="address" id="select-address">
+            <option class="white" selected disabled>select</option>
+            {% for address in addresses %}
+            <option value="{{address.id}}">{{address.address}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="my-20 mx-15">
+          Don't have an address?<a class="purple-6 relative underline-s-purple-pale"
+            href="{% url 'ecommerce:account:address-register' %}">Register it</a>
+        </div>
+        <div class="my-20 mx-15">
+          <p class=''> You will pay a total of <strong class="">{{total}}</strong> </p>
+        </div>
+        <div class="my-20 mx-15">
+          <p>Note: may</p>
+        </div>
+        <div class="my-20 mx-15 button-box">
+          <button type="submit"
+            class="button white white-pale-active bg-purple-pale bg-purple-6-active font-xxl radius-5"> Submit</button>
+        </div>
+      </div>
+    </div>
   </form>
 </div>
 {% endblock %}
