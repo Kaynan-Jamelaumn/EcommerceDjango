@@ -65,12 +65,10 @@ body::after {
 
 }
 
-
 #main-menu {
   z-index: 1;
   transform: translateX(-100%);
   position: fixed;
-  left: 0;
   top: 0;
   width: 280px;
   height: 100%;
@@ -79,8 +77,121 @@ body::after {
 
 }
 
+#main-menu:has(> .menu-left) {
+  z-index: 1;
+  transform: translateX(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+
+}
+
+#main-menu:has(> .menu-top-left) {
+  z-index: 1;
+  transform: translateX(-100%)translateY(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-bottom-left) {
+  z-index: 1;
+  transform: translateX(-100%)translateY(100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-bottom-left-middle) {
+  z-index: 1;
+  transform: translateX(100%)translateY(100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-top-left-middle) {
+  z-index: 1;
+  transform: translateX(100%)translateY(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+}
+
+
+#main-menu:has(> .menu-top-right) {
+  z-index: 1;
+  transform: translateX(100%)translateY(-100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-bottom-right) {
+  z-index: 1;
+  transform: translateX(100%)translateY(100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-bottom-right-middle) {
+  z-index: 1;
+  transform: translateX(-100%)translateY(100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-top-right-middle) {
+  z-index: 1;
+  transform: translateX(-100%)translateY(-100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-from-above) {
+  z-index: 1;
+  transform: translateY(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#main-menu:has(> .menu-from-bottom) {
+  z-index: 1;
+  transform: translateY(+100%);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transition: 1s;
+}
+
+
+#main-menu:has(> .menu-right) {
+  z-index: 1;
+  transform: translateX(+100%);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+}
+
+
+
 #main-menu.show {
-  transform: translateX(0%);
+  transform: translateX(0%) translateY(0%);
   transition: 1s;
 }
 
