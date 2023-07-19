@@ -53,6 +53,18 @@ body::after {
     max-height: none;
   }
 
+  .space-custom> :nth-child(1) {
+    height: auto;
+    max-height: none;
+  }
+
+  .space-custom> :nth-child(1)>img {
+    height: auto;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+  }
+
+
   .space-custom> :nth-child(2)>p {
     height: auto;
     max-height: none;
@@ -160,7 +172,7 @@ body::after {
   transition: 1s;
 }
 
-#main-menu:has(> .menu-from-above) {
+#main-menu:has(> .menu-top) {
   z-index: 1;
   transform: translateY(-100%);
   position: fixed;
@@ -169,7 +181,7 @@ body::after {
   transition: 1s;
 }
 
-#main-menu:has(> .menu-from-bottom) {
+#main-menu:has(> .menu-bottom) {
   z-index: 1;
   transform: translateY(+100%);
   position: fixed;
